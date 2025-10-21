@@ -1,20 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-/**                                                                                 
- * main - prints the last digit of a random number                                  
- *                                                                                  
- * Return: Always 0 (Success)                                                       
+/**
+ * main - prints the last digit of a random number
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-        char alphabet = 'a';
+char lettre = 'a';
 
-        srand(time(0));
-        n = rand() - RAND_MAX / 2;
-
-        /* your code goes there */
-	for (alphabet = 'a'; alphabet >= z ; alphabet++)
-	  putchar(alphabet);
+/* your code goes there */
+for (lettre = 'a'; lettre <= 'z' ; lettre++)
+	{
+	putchar(lettre);
+	}
+putchar('\n');
 return (0);
 }
