@@ -11,7 +11,7 @@
  */
 int main(void)
 {
-	int n;
+	putcharn;
 	int dernier_chiffre;
 
 	srand(time(0));
