@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 /**
  * main - prints all single-digit numbers separated by ", ", ends with $
  * Return: Always 0 (Success)
