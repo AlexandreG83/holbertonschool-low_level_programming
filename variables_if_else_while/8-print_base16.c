@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-int lettre;
+char lettre;
 
 /* Your code goes there */
 for (lettre = 0; lettre < 16; lettre++)
