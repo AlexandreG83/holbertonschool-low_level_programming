@@ -1,9 +1,10 @@
 #include "main.h"
-#include <stdlib.h>
-#include <time.h>
+
 /**
- * main - prints the last digit of a random number
- * Return: Always 0 (Success)
+ * print_alphabet - prints the alphabet in lowercase
+ *
+ * Description: Uses _putchar to print each letter from 'a' to 'z',
+ * followed by a newline.
  */
 void print_alphabet(void)
 {
