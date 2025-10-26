@@ -9,10 +9,10 @@ int main(void)
 {
 long int i, n1 = 1, n2 = 2, next;
 
-for (i = 1; i <= 100; i++)
+for (i = 1; i <= 50; i++)
 {
 	printf("%ld", n1);
-	if (i != 100)
+	if (i != 50)
 	{
 		printf(", ");
 	}
