@@ -14,9 +14,9 @@ if (size <= 0)
 	_putchar('\n');
 else
 {
-	for (hauteur = 0; hauteur <= size; hauteur++)
+	for (hauteur = 0; hauteur < size; hauteur++)
 	{
-		for (largeur = 0; largeur <= size; largeur++)
+		for (largeur = 0; largeur < size; largeur++)
 		{
 			_putchar('#');
 		}
