@@ -9,25 +9,25 @@
 int _atoi(char *s)
 {
 int i = 0;
-int signe = 1;
-unsigned int num = 0;
+int sign = 1;
+int started = 0;
+int num = 0;
 
-/* Parcourir tous les caracteres avant le nombre */
 while (s[i] != '\0')
+{
+	if (s[i] >= '0' && s[i] <= '9')
 	{
-	/* les signes */
-	if (s[i] == '-')
-		signe *= -1;
-	else if (s[i] >= '0' && s[i] <= '9')
+		started = 1;
+		num = num * 10 + (s[i] - '0');
+	}
+	else
 	{
-		/* Extraire le nombre */
-		while (s[i] >= '0' && s[i] <= '9')
-		{
-			num = (num * 10) + (s[i] - '0');
-			i++;
-		}
+		if (started)
+			break;
+		if (s[i] == '-')
+			sign = -sign;
 	}
 	i++;
 }
-return (num * signe);
+return (num * sign);
 }
