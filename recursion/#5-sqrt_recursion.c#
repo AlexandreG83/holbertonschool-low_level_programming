@@ -1,0 +1,188 @@
+
+Write a function that returns the factorial of a given number.
+* Prototype: int factorial(int n);
+* If n is lower than 0, the function should return -1 to indicate an error
+* Factorial of 0 is 1
+
+julien@ubuntu:~/Recursion$ cat 3-main.c
+#include "main.h"
+#include <stdio.h>
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    int r;
+
+    r = factorial(1);
+    printf("%d\n", r);
+    r = factorial(5);
+    printf("%d\n", r);
+    r = factorial(10);
+    printf("%d\n", r);
+    r = factorial(-1024);
+    printf("%d\n", r);
+    return (0);
+}
+julien@ubuntu:~/Recursion$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 3-main.c 3-factorial.c -o 3-factorial
+julien@ubuntu:~/Recursion$ ./3-factorial 
+1
+120
+3628800
+-1
+julien@ubuntu:~/Recursion$
+Repo:
+* GitHub repository: holbertonschool-low_level_programming
+* Directory: recursion
+* File: 3-factorial.c
+
+Afficher plus
+Here's the factorial function that meets your requirements:
+
+3-factorial.c
+Code 
+This recursive function:
+
+Returns -1 if n is negative (error handling)
+Returns 1 if n is 0 (base case)
+Recursively calculates n * factorial(n - 1) for positive values
+The function works as shown in your test output:
+
+factorial(1) = 1
+factorial(5) = 120
+factorial(10) = 3628800
+factorial(-1024) = -1
+Write a function that returns the value of x raised to the power of y.
+* Prototype: int _pow_recursion(int x, int y);
+* If y is lower than 0, the function should return -1
+FYI: The standard library provides a different function: pow. Run man pow to learn more.
+
+julien@ubuntu:~/Recursion$ cat 4-main.c
+#include "main.h"
+#include <stdio.h>
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    int r;
+
+    r = _pow_recursion(1, 10);
+    printf("%d\n", r);
+    r = _pow_recursion(1024, 0);
+    printf("%d\n", r);
+    r = _pow_recursion(2, 16);
+    printf("%d\n", r);
+    r = _pow_recursion(5, 2);
+    printf("%d\n", r);
+    r = _pow_recursion(5, -2);
+    printf("%d\n", r);
+    r = _pow_recursion(-5, 3);
+    printf("%d\n", r);
+    return (0);
+}
+julien@ubuntu:~/Recursion$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 4-main.c 4-pow_recursion.c -o 4-pow
+julien@ubuntu:~/Recursion$ ./4-pow 
+1
+1
+65536
+25
+-1
+-125
+julien@ubuntu:~/Recursion$
+Repo:
+* GitHub repository: holbertonschool-low_level_programming
+* Directory: recursion
+* File: 4-pow_recursion.c
+
+Afficher plus
+Here's the power function using recursion:
+
+4-pow_recursion.c
+Code 
+This recursive function:
+
+Returns -1 if y is negative (error handling)
+Returns 1 if y is 0 (base case - any number to the power of 0 is 1)
+Recursively calculates x * _pow_recursion(x, y - 1) for positive exponents
+The function works as shown in your test output:
+
+_pow_recursion(1, 10) = 1 (1^10 = 1)
+_pow_recursion(1024, 0) = 1 (anything^0 = 1)
+_pow_recursion(2, 16) = 65536 (2^16)
+_pow_recursion(5, 2) = 25 (5^2)
+_pow_recursion(5, -2) = -1 (error for negative exponent)
+_pow_recursion(-5, 3) = -125 ((-5)^3)
+Write a function that returns the natural square root of a number.
+* Prototype: int _sqrt_recursion(int n);
+* If n does not have a natural square root, the function should return -1
+FYI: The standard library provides a different function: sqrt. Run man sqrt to learn more.
+
+julien@ubuntu:~/Recursion$ cat 5-main.c 
+#include "main.h"
+#include <stdio.h>
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    int r;
+
+    r = _sqrt_recursion(1);
+    printf("%d\n", r);
+    r = _sqrt_recursion(1024);
+    printf("%d\n", r);
+    r = _sqrt_recursion(16);
+    printf("%d\n", r);
+    r = _sqrt_recursion(17);
+    printf("%d\n", r);
+    r = _sqrt_recursion(25);
+    printf("%d\n", r);
+    r = _sqrt_recursion(-1);
+    printf("%d\n", r);
+    return (0);
+}
+julien@ubuntu:~/gcc -Wall -pedantic -Werror -Wextra -std=gnu89 5-main.c 5-sqrt_recursion.c -o 5-sqrt
+julien@ubuntu:~/Recursion$ ./5-sqrt 
+1
+32
+4
+-1
+5
+-1
+julien@ubuntu:~/Recursion$
+Repo:
+* GitHub repository: holbertonschool-low_level_programming
+* Directory: recursion
+* File: 5-sqrt_recursion.c
+
+Afficher plus
+Here's the recursive square root function:
+
+5-sqrt_recursion.c
+Code 
+
+
+
+
+
+
+
+#include "main.h"
+
+/**
+ * sqrt_helper - helper function to find square root recursively
+ * @n: the number to find square root of
+ * @guess: current guess for the square root
+ *
+ * Return: the square root if found, -1 otherwise
+ */
