@@ -17,9 +17,9 @@ if (argc != 3)
 	return (1);
 }
 /*atoi convertit une chaine en entier*/
-num1 = atoi(argv[1]); 
+num1 = atoi(argv[1]);
 num2 = atoi(argv[2]);
-resultat = num1 * num2;
+resultat = num1 *num2;
 printf("%d\n", resultat);
 return (0);
 }
