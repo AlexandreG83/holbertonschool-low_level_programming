@@ -1,0 +1,47 @@
+#include "main.h"
+
+/**
+ * longueur - returns the length of a string
+ * @s: string to measure
+ *
+ * Return: length of string
+ */
+int longueur(char *s)
+{
+if (*s == '\0')
+	return (0);
+return (1 + longueur(s + 1));
+}
+
+/**
+ * vrai_palindrome - recursively checks if string is palindrome
+ * @s: string to check
+ * @gauche: left index
+ * @droite: right index
+ *
+ * Return: 1 if palindrome, 0 if not
+ */
+int vrai_palindrome(char *s, int gauche, int droite)
+{
+if (gauche >= droite)
+	return (1);
+if (s[gauche] != s[droite])
+	return (0);
+return (vrai_palindrome(s, gauche + 1, droite - 1));
+}
+
+/**
+ * is_palindrome - checks if a string is a palindrome
+ * @s: string to check
+ *
+ * Return: 1 if palindrome, 0 if not
+ */
+int is_palindrome(char *s)
+{
+int len;
+len = longueur(s);
+
+if (len == 0)
+	return (1);
+return (vrai_palindrome(s, 0, len - 1));
+}
