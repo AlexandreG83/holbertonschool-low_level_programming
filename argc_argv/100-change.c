@@ -30,7 +30,7 @@ for (i = 0; i < 5; i++)
 {
 	while (cents >= denominations[i])
 	{
-		cents -= denominations[i];
+		cents = cents - denominations[i];
 		coins++;
 	}
 }
