@@ -30,20 +30,16 @@ void multiply(char *num1, char *num2)
 {
 int len1, len2, len, *resultat, i_num1, i_num2;
 int i, j, stock, n1, n2, somme;
-
 while (*num1 == '0' && *(num1 + 1) != '\0')
 	num1++;
 while (*num2 == '0' && *(num2 + 1) != '\0')
 	num2++;
-
 len1 = strlen(num1);
 len2 = strlen(num2);
 len = len1 + len2;
-
 resultat = calloc(len, sizeof(int));
 if (!resultat)
 	exit(98);
-
 for (i = len1 - 1, i_num1 = 0; i >= 0; i--, i_num1++)
 {
 	n1 = num1[i] - '0';
@@ -58,7 +54,6 @@ for (i = len1 - 1, i_num1 = 0; i >= 0; i--, i_num1++)
 if (stock > 0)
 	resultat[i_num1 + i_num2] += stock;
 }
-
 i = len - 1;
 while (i >= 0 && resultat[i] == 0)
 	i--;
