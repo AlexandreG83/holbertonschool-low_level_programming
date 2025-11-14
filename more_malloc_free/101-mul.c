@@ -59,12 +59,12 @@ i = len - 1;
 while (i >= 0 && resultat[i] == 0)
 	i--;
 if (i == -1)
-	putchar('0');
+	_putchar('0');
 else
 {
-	for (; i >= 0; i--)
+	for (; i >= 0; i++)
 	{
-		putchar(resultat[i] + '0');
+		_putchar(resultat[i] + '0');
 	}
 }
 putchar('\n');
