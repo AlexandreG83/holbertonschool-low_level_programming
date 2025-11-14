@@ -62,12 +62,12 @@ if (i == -1)
 	_putchar('0');
 else
 {
-	for (; i >= 0; i++)
+	for (; i >= 0; i--)
 	{
 		_putchar(resultat[i] + '0');
 	}
 }
-putchar('\n');
+_putchar('\n');
 free(resultat);
 }
 
@@ -85,11 +85,8 @@ int n;
 if (argc != 3 || !is_number(argv[1]) || !is_number(argv[2]))
 {
 	for (n = 0; error[n]; n++)
-	{
 		_putchar(error[n]);
-		return (98);
-
-	}
+	return (98);
 }
 multiply(argv[1], argv[2]);
 return (0);
