@@ -39,29 +39,30 @@ while (str[len] && str[len] != ' ')
 	len++;
 return (len);
 }
-
- /**
- * strtow - splits string into words
- * @str: input string
+/**
+ * strtow - splits a string into words
+ * @str: string to split
  *
- * Return: pointer to an array of strings
+ * This function takes a string and separates it into individual words.
+ * Words are defined as sequences of non-space characters. The function
+ * allocates memory for an array of strings, stores each word in a newly
+ * allocated string, and terminates the array with a NULL pointer.
+ *
+ * Return: pointer to an array of strings, or NULL on failure
  */
 char **strtow(char *str)
 {
 char **words;
-int i = 0, j = 0, k = 0, n = 0, len = 0, wc;
+int k = 0, n = 0, len = 0, wc;
 
-if (str == NULL || *str == '\0')
+if (str == NULL || str[0] == '\0')
 	return (NULL);
-
 wc = word_count(str);
 if (wc == 0)
 	return (NULL);
-
 words = malloc(sizeof(char *) * (wc + 1));
 if (words == NULL)
 	return (NULL);
-
 while (*str)
 {
 	while (*str == ' ')
@@ -81,10 +82,10 @@ while (*str)
 			return (NULL);
 		}
 		for (n = 0; n < len; n++)
-			words[k][n] = str[i + n];
+			words[k][n] = str[n];
 		words[k][len] = '\0';
+		str = str + len;
 		k++;
-		i = j;
 	}
 }
 words[k] = NULL;
