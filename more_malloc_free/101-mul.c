@@ -11,15 +11,14 @@
 int is_number(char *s)
 {
 int i;
+if (!s || !*s)
+	return (0);
 for (i = 0; s[i]; i++)
 {
 	if (!isdigit(s[i]))
 		return (0);
 }
-if (!s || !*s)
-	return (0);
-else
-	return (1);
+return (1);
 }
 
 /**
@@ -29,10 +28,17 @@ else
  */
 void multiply(char *num1, char *num2)
 {
-int len1 = strlen(num1);
-int len2 = strlen(num2);
-int len = len1 + len2;
-int *resultat, i_num1, i_num2, i, j, stock, n1, n2, somme;
+int len1, len2, len, *resultat, i_num1, i_num2;
+int i, j, stock, n1, n2, somme;
+
+while (*num1 == '0' && *(num1 + 1) != '\0')
+	num1++;
+while (*num2 == '0' && *(num2 + 1) != '\0')
+	num2++;
+
+len1 = strlen(num1);
+len2 = strlen(num2);
+len = len1 + len2;
 
 resultat = calloc(len, sizeof(int));
 if (!resultat)
