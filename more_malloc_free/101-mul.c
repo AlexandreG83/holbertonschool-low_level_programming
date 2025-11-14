@@ -19,7 +19,7 @@ for (i = 0; s[i]; i++)
 if (!s || !*s)
 	return (0);
 else
-	return (1);   
+	return (1);
 }
 
 /**
