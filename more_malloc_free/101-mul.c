@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
 {
 char error[] = "Error\n";
 int n;
- 
+
 if (argc != 3 || !is_number(argv[1]) || !is_number(argv[2]))
 {
 	for (n = 0; error[n]; n++)
