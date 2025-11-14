@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -78,10 +79,17 @@ free(resultat);
  */
 int main(int argc, char *argv[])
 {
+char error[] = "Error\n";
+int n;
+ 
 if (argc != 3 || !is_number(argv[1]) || !is_number(argv[2]))
 {
-	printf("Error\n");
-	return (98);
+	for (n = 0; error[n]; n++)
+	{
+		_putchar(error[n]);
+		return (98);
+
+	}
 }
 multiply(argv[1], argv[2]);
 return (0);
