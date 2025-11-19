@@ -1,12 +1,39 @@
-#include "variadic_functions.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "3-calc.h"
 
 /**
- * main - check the code
+ * main - performs simple operations
+ * @argc: number of arguments
+ * @argv: array of arguments
  *
- * Return: Always 0.
+ * Return: 0 on success, or exits with error codes
  */
-int main(void)
+int main(int argc, char *argv[])
 {
-    print_all("ceis", 'B', 3, "stSchool");
-    return (0);
+int num1, num2;
+int (*op_func)(int, int);
+
+if (argc != 4)
+{
+	printf("Error\n");
+	exit(98);
+}
+
+op_func = get_op_func(argv[2]);
+if (op_func == NULL)
+{
+	printf("Error\n");
+	exit(99);
+}
+num1 = atoi(argv[1]);
+num2 = atoi(argv[3]);
+
+if ((argv[2][0] == '/' || argv[2][0] == '%') && num2 == 0)
+{
+	printf("Error\n");
+	exit(100);
+}
+printf("%d\n", op_func(num1, num2));
+return (0);
 }
