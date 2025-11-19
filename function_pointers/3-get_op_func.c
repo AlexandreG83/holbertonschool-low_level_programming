@@ -27,4 +27,3 @@ while (ops[i].op != NULL)
 }
 return (NULL);
 }
- 
