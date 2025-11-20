@@ -1,0 +1,3 @@
+global main
+extern printf
+
