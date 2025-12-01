@@ -1,0 +1,18 @@
+#include "lists.h"
+11;rgb:2b2b/2b2b/2b2b
+/**
+ * free_list - frees a singly linked list
+ * @head: pointer to the first node of the list
+ */
+void free_list(list_t *head)
+{
+	list_t *tmp;
+
+	while (head != NULL)
+	{
+		tmp = head->next;
+		free(head->str);
+		free(head);
+		head = tmp;
+	}
+}
