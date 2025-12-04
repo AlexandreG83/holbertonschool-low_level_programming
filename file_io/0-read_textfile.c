@@ -40,10 +40,14 @@ if (read_octets == -1)
 }
 
 total_written = write(STDOUT_FILENO, buffer, read_octets);
+if (total_written == -1 || total_written != read_octets)
+{
+	free(buffer);
+	close(file_descriptor);
+	return (0);
+}
+
 free(buffer);
 close(file_descriptor);
-if (total_written != read_octets)
-	return (0);
-
 return (total_written);
 }
