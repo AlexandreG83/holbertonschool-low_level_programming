@@ -21,6 +21,8 @@ char *buffer;
 if (!filename)
 	return (0);
 
+if (!letters)
+	return (0);
 file_descriptor = open(filename, O_RDONLY);
 if (file_descriptor == -1)
 	return (0);
