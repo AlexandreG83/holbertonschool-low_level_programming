@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
@@ -18,10 +17,9 @@ int file_descriptor;
 ssize_t read_octets, total_written = 0;
 char *buffer;
 
-if (!filename)
+if (filename == 0)
 	return (0);
-
-if (!letters)
+if (letters == 0)
 	return (0);
 
 file_descriptor = open(filename, O_RDONLY);
@@ -29,7 +27,7 @@ if (file_descriptor == -1)
 	return (0);
 
 buffer = malloc(sizeof(char) * (letters + 1));
-if (!buffer)
+if (buffer == NULL)
 {
 	close(file_descriptor);
 	return (0);
@@ -41,21 +39,6 @@ if (read_octets == -1)
 	free(buffer);
 	close(file_descriptor);
 	return (0);
-}
-
-while (total_written < read_octets)
-{
-	ssize_t w = write(STDOUT_FILENO,
-buffer + total_written,
-read_octets - total_written);
-
-	if (w == -1)
-	{
-		free(buffer);
-		close(file_descriptor);
-		return (0);
-	}
-	total_written += w;
 }
 
 free(buffer);

@@ -12,7 +12,7 @@
  * Return: actual number of letters read and printed,
  *         0 on failure (cannot open/read/write or filename is NULL)
  */
-int create_file(const char *filename, char *text_content);
+int create_file(const char *filename, char *text_content)
 {
 int file_descriptor;
 ssize_t octets_written;
