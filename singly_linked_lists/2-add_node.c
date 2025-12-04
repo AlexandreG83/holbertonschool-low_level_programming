@@ -28,7 +28,17 @@ if (!new_node->str)
 
 new_node->len = strlen(str);
 new_node->next = *head;
-*head = new_node;
 
+if (*head == NULL)
+{
+	*head = new_node;
+	return (new_node);
+}
+
+tmp = *head;
+while (tmp->next != NULL)
+	tmp = tmp->next;
+
+tmp->next = new_node;
 return (new_node);
 }
