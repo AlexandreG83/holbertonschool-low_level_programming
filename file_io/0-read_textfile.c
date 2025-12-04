@@ -23,11 +23,12 @@ if (!filename)
 
 if (!letters)
 	return (0);
+
 file_descriptor = open(filename, O_RDONLY);
 if (file_descriptor == -1)
 	return (0);
 
-buffer = malloc(sizeof(char) * letters);
+buffer = malloc(sizeof(char) * (letters + 1);
 if (!buffer)
 {
 	close(file_descriptor);
