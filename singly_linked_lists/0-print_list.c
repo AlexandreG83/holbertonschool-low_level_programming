@@ -3,6 +3,8 @@
 #include <stddef.h>
 #include <stdlib.h>
 
+size_t print_list(const list_t *h)
+
 /**
  * print_list - Prints all elements of a linked list
  * @h: Pointer to the head of the list
@@ -13,8 +15,6 @@ size_t print_list(const list_t *h)
 {
 	size_t count = 0;
 
-	if (h == NULL)
-		return (-1);
 	while (h != NULL)
 	{
 		if (h->str == NULL)
