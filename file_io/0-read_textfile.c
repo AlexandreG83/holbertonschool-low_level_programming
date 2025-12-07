@@ -1,7 +1,7 @@
 #include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
 #include "main.h"
+#include <unistd.h>
+#include <fcntl.h>
 
 /**
  * read_textfile - reads a text file and prints it to POSIX standard output
