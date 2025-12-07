@@ -17,14 +17,14 @@ int file_descriptor;
 ssize_t read_octets, total_written = 0;
 char *buffer;
 
-if (filename == NULL)
+if (filename == NULL || letters == 0)
 	return (0);
 
 file_descriptor = open(filename, O_RDONLY);
 if (file_descriptor == -1)
 	return (0);
 
-buffer = malloc((sizeof(char) * letters) + 1));
+buffer = malloc(sizeof(char) * letters);
 if (buffer == NULL)
 {
 	close(file_descriptor);
@@ -49,5 +49,6 @@ if (total_written == -1 || total_written != read_octets)
 
 free(buffer);
 close(file_descriptor);
+
 return (total_written);
 }
